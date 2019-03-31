@@ -124,7 +124,7 @@
                     ]
                   },
                   "Binds": [
-                    "C:/Dev/iotedge/crate/localstorageCrateDBEdgeSolution:/d"
+                    "${PATH_PREFIX_EDGE}:/d"
                   ]
                 }
               }
@@ -157,7 +157,7 @@
                     ]
                   },
                   "Binds" : [
-                    "C:/Dev/docker/mounts/crate/data:/data"
+                    "${PATH_PREFIX_STORAGE}/crate/data:/data"
                   ]
                 }
               }
@@ -214,7 +214,7 @@
                     ]
                   },
                   "Binds" : [
-                    "C:/Dev/docker/mounts/grafana/data:/data"
+                    "${PATH_PREFIX_STORAGE}/grafana/data:/data"
                   ]
                 }
               }

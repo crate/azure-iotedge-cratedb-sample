@@ -10,7 +10,7 @@ To be able to run this sample on your edge device, you'll have Azure IoT Edge in
 
 Since this sample was developed with Visual Studio Code, the easiest way to run the sample is by using Visual Studio Code with the according Azure IoT Edge Plugin, as used for [custom module development of Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module).
 
-#Set up the Edge Device as a vagrant VM
+# Set up the Edge Device as a vagrant VM
 This approach make the set up experience more streamlined.
 
 1. Checkout this repo: https://github.com/crate/azure-iotedge-cratedb-sample
@@ -41,9 +41,16 @@ This approach make the set up experience more streamlined.
 15. Modify the config.yaml to use your Device ID
     1. it is in this path of the repo: vagrant/config.yaml
 16. Vagrant up
+17. Open the shh by running
+    1. vagrant ssh
+18. Restart the service inside the VM
+    1. sudo systemctl restart iotedge
+
 17. continue with the next steps
 
-
+## Connect to Grafana
+The Vagrantfile binds the grafana port on the edge device (3000) to the port 3300 in your system.
+Just browse `http://localhost:3300` and you should see the login page. use admin as username and password
 
 ## Configuring the local database
 

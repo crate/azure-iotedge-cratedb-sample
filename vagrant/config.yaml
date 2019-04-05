@@ -1,6 +1,0 @@
-configs:
-    use: 'test'
-    test:
-        IOT_EDGE_DEVICE_CONN_STR: '<ADD DEVICE CONNECTION STRING HERE>'
-    other:
-        IOT_EDGE_DEVICE_CONN_STR: 'Other connection'

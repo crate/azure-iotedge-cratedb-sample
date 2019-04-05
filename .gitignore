@@ -1,6 +1,7 @@
 config/
 .env
 .DS_Store
+.vscode
 crate/data/
 vagrant/.vagrant/
 vagrant/ubuntu-bionic-18.04-cloudimg-console.log

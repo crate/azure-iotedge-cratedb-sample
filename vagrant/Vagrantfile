@@ -51,6 +51,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "../appdata", "/mnt/cratedbsaver/appdata"
   config.vm.synced_folder "../crate", "/mnt/crate"
   config.vm.synced_folder "../scripts", "/mnt/scripts"
+  config.vm.synced_folder "../../azure-iotedge-cratedb-sample", "/mnt/sample"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -92,7 +93,6 @@ config.vm.provision "shell",  env: {"IOT_EDGE_DEVICE_CONN_STR" => vagrant_config
   apt-get -y install moby-engine
   apt-get -y install moby-cli
   apt-get -y install iotedge
-  apt-get -y install docker-compose
   export new="$IOT_EDGE_DEVICE_CONN_STR"
   echo "$new"
   # edit device connection string in the config.yaml, do not change it here. It will be read from that config file

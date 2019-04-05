@@ -1,6 +1,0 @@
-configs:
-    use: 'test'
-    test:
-        IOT_EDGE_DEVICE_CONN_STR: 'HostName=pioneers-gianluca-iothub.azure-devices.net;DeviceId=CrateOnEdge;SharedAccessKey=0oA40Pc4d9zHe3kRTzAgcLd8HwhplhU5d9HbnoRYMxQ='
-    other:
-        IOT_EDGE_DEVICE_CONN_STR: 'Other connection'

@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS "doc"."raw" (
    "insert_ts" TIMESTAMP GENERATED ALWAYS AS current_timestamp(3),
-   "g_ts_week" TIMESTAMP GENERATED ALWAYS AS date_trunc('week', current_timestamp(3)),
+   "g_ts_week" TIMESTAMP GENERATED ALWAYS AS date_trunc('week', insert_ts),
    "iothub_enqueuedtime" TIMESTAMP,
    "iothub_connection_device_id" string,
    "payload" OBJECT (IGNORED)

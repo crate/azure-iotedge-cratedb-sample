@@ -183,7 +183,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "playground.registry.cr8.net/microsoft/enrichment:1.0.0",
+              "image": "cr8playground.azurecr.io/microsoft/enrichment:1.0.0",
               "createOptions": {
                 "Env" : [
                   "RAW_CONNECTION=http://cratedb:4200",

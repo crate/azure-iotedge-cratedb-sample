@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS "doc"."raw" (
    "insert_ts" TIMESTAMP GENERATED ALWAYS AS current_timestamp(3),
-   "g_ts_week" TIMESTAMP GENERATED ALWAYS AS date_trunc('week', insert_ts),
+   "g_ts_week" TIMESTAMP GENERATED ALWAYS AS date_trunc('week', current_timestamp(3)),
    "iothub_enqueuedtime" TIMESTAMP,
    "iothub_connection_device_id" string,
    "payload" OBJECT (IGNORED)
@@ -23,5 +23,7 @@ CLUSTERED INTO 1 SHARDS
 PARTITIONED BY ("g_ts_week");
 
 CREATE USER edgeingest WITH (password = 'p@ssword');
-
 GRANT ALL ON SCHEMA doc to edgeingest;
+
+CREATE USER grafana WITH (password = 'gr@fana');
+GRANT ALL ON SCHEMA doc to grafana;

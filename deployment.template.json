@@ -88,9 +88,9 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "mcr.microsoft.com/iotedge/opc-publisher:2.2.0",
+              "image": "mcr.microsoft.com/iotedge/opc-publisher:2.3.3",
               "createOptions": {
-                "Hostname" : "publisher",
+                "Hostname" : "opc-publisher",
                 "Cmd" : [
                   "publisher",
                   "--at",
@@ -110,7 +110,9 @@
                   "/d/config/issuer",
                   "--si=1",
                   "--to",
-                  "--aa"
+                  "--aa",
+                  "--oi=5",
+                  "--op=5"
                  ],
                 "HostConfig": {
                   "ExposedPorts" : {
@@ -136,7 +138,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "crate:3.2.4",
+              "image": "crate:3.3.5",
               "createOptions": {
                 "Hostname" : "cratedb",
                 "HostConfig": {
@@ -183,7 +185,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "playground.registry.cr8.net/microsoft/enrichment:1.0.0",
+              "image": "cr8playground.azurecr.io/microsoft/enrichment:1.0.0",
               "createOptions": {
                 "Env" : [
                   "RAW_CONNECTION=http://cratedb:4200",
@@ -199,7 +201,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "grafana/grafana:5.1.0",
+              "image": "grafana/grafana:6.2.5",
               "createOptions": {
                 "Hostname" : "grafana",
                 "HostConfig": {

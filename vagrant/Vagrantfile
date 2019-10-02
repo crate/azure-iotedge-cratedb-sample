@@ -94,11 +94,12 @@ config.vm.provision "shell",  env: {"IOT_EDGE_DEVICE_CONN_STR" => vagrant_config
   apt-get -y install moby-engine
   apt-get -y install moby-cli
   apt-get -y install iotedge
-  export new=$IOT_EDGE_DEVICE_CONN_STR
-  echo "$new"
+  export NEW=$IOT_EDGE_DEVICE_CONN_STR
+  echo $NEW
   # edit device connection string in the config.yaml, do not change it here. It will be read from that config file
-  export old="<ADD DEVICE CONNECTION STRING HERE>"
-  sudo sed -i 's/$old/$new/g' /etc/iotedge/config.yaml
+  export OLD='<ADD DEVICE CONNECTION STRING HERE>'
+  sudo sed -i "s~${OLD}~${NEW}~g" /etc/iotedge/config.yaml
+  sudo grep device_connection_string /etc/iotedge/config.yaml
   systemctl restart iotedge
   sysctl -w vm.max_map_count=262144
   echo "vm.max_map_count=262144" > /etc/sysctl.conf

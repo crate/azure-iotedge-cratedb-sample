@@ -43,8 +43,8 @@ This approach makes the set-up experience more streamlined.
 Before starting to deploy the sample to the edge device, the local CrateDB used in the sample has to be created first. An existing CrateDB in the local network could be used, too, but this sample uses CrateDB running in a container on the same device as the Azure IoT Edge runtime. 
 This setup step should be done in your laptop, and will create the information in a data folder. This data folder is then shared with the Edge module, so the tables will be there. (that's why we start and stop the container after running the SQL)
 
-1. Create a folder on the disk for the CrateDB database files under the `crate` folder that you created above in step 7. For me, it is `/gn/git/azure-iotedge-cratedb-sample/crate/data`. 
-2. Run CrateDB locally from the command line by using `docker run -p "4200:4200" -d --rm --name cratedb -v /gn/git/azure-iotedge-cratedb-sample/crate/data:/data crate` and replace it with the location for the folder you have created in step 1.
+1. Create a folder on the disk for the CrateDB database files under the `crate` folder that you created above in step 7. For me, it is `/gn/git/azure-iotedge-cratedb-sample/crate/data`.
+2. Run CrateDB locally from the command line by using `docker run -p "4200:4200" -d --rm --name cratedb -v /gn/git/azure-iotedge-cratedb-sample/crate/data:/data crate:4.1.2` and replace it with the location for the folder you have created in step 1.
 3. Open a web browser with `http://localhost:4200` and go to the CrateDB Admin UI console.
 4. Create the tables and the user by executing all SQL Statements in the file `./scripts/database_setup/createTable.sql`.
 5. Stop the container with `docker container stop cratedb`.

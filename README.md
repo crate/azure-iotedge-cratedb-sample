@@ -17,7 +17,7 @@ This approach makes the set-up experience more streamlined.
 1. Checkout this repo `git clone https://github.com/crate/azure-iotedge-cratedb-sample.git`
 2. Install [Vagrant](https://www.vagrantup.com/downloads.html).
 3. Install [Visual Studio Code](https://code.visualstudio.com/download).
-4. Install extensions for Visual Studio: (On the Visual Studio Code: Menu -> Preferences -> Extensions)
+4. Install extensions for Visual Studio Code: (On the Visual Studio Code: Menu -> Preferences -> Extensions)
     1. Azure IoT Hub Toolkit
     2. Azure IoT Edge
     3. Vagrant
@@ -26,12 +26,12 @@ This approach makes the set-up experience more streamlined.
 7. Create a folder `crate` in the project directory. For me, it is `/gn/git/azure-iotedge-cratedb-sample/crate`.
 8. Follow the instructions under 'Configuring the local database'.
 9. Create an IoT Hub (S1) on Azure. You'll need to wait for it to be in an active state, it could take a while.
-10. After your IoT hub has started, you can use Visual Studio integration to connect to it.
-11. In Visual Studio (or on the Azure Portal), you can create a new test Edge Device.
-12. Right click on the device and select “Copy Device Connection String” from the Menu.   
+10. After your IoT hub has started, you can use Visual Studio Code integration to connect to it.
+11. In Visual Studio Code (or on the Azure Portal), you can create a new IoT Edge Device.
+12. Right click on the device and select “Copy Device Connection String” from the Menu.
 13. Go to the Vagrant folder of the project, for me it is `cd /gn/git/azure-iotedge-cratedb-sample/vagrant`.
 14. Modify the `config.template.yaml` to use your Device Connection String and rename it to `config.yaml`.
-15. Right click on `deployment.template.json` and click on 'Build IoT Edge Module'.
+15. Right click on `deployment.template.json` and click on 'Build IoT Edge Solution'.
 16. Go to the config folder, right click on `deployment.amd64.json` and click on 'Create Deployment for Single Device'.
 15. In your terminal, start Vagrant by `vagrant up`.
 16. Open the shh by running `vagrant ssh`.

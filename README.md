@@ -31,11 +31,12 @@ This approach makes the set-up experience more streamlined.
 12. Right click on the device and select “Copy Device Connection String” from the Menu.
 13. Go to the Vagrant folder of the project, for me it is `cd /gn/git/azure-iotedge-cratedb-sample/vagrant`.
 14. Modify the `config.template.yaml` to use your Device Connection String and rename it to `config.yaml`.
-15. Right click on `deployment.template.json` and click on 'Build IoT Edge Solution'.
-16. Go to the config folder, right click on `deployment.amd64.json` and click on 'Create Deployment for Single Device'.
-15. In your terminal, start Vagrant by `vagrant up`.
-16. Open the shh by running `vagrant ssh`.
-17. Restart the service inside the VM by `sudo systemctl restart iotedge`.
+15. Copy the contents of `.env.template` into a new file `.env`. The default settings work out of the box for the vagrant box.
+16. Right click on `deployment.template.json` and click on 'Build IoT Edge Solution'.
+17. Go to the config folder, right click on `deployment.amd64.json` and click on 'Create Deployment for Single Device'.
+18. In your terminal, start Vagrant by `vagrant up`.
+19. Open the shh by running `vagrant ssh`.
+20. Restart the service inside the VM by `sudo systemctl restart iotedge`.
 
 
 ## Configuring the local database

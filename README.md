@@ -55,9 +55,12 @@ This setup step should be done in your laptop, and will create the information i
 1. Per default this sample uses all nodes from the [OPC-UA Server simulation](https://github.com/Azure-Samples/iot-edge-opc-plc). If you want to change the setup, just edit the `publishednodes.json` file in the folder `appdata`
 2. Edit the files `deployment.template.json` and `deployment.debug.template.json` by changing the publisher's data folder from `C:/Dev/iotedge/crate/localstorageCrateDBEdgeSolution` to the directory you've downloaded the source repository on your local disk.
 
+## Connecting to CrateDB
+The Vagrantfile binds the CrateDB on the edge device port 4200 to the port 4200 in your system. Browse to `http://localhost:4200` and you will find the CrateDB Admin UI.
+
 
 ## Connecting to Grafana
-The Vagrantfile binds the grafana port on the edge device 3000 to the port 33000 in your system. Browse to `http://localhost:33000` and you will find the login page. Use `admin` as username and password.
+The Vagrantfile binds the grafana on the edge device port 3000 to the port 3000 in your system. Browse to `http://localhost:3000` and you will find the login page. Use `admin` as username and password.
 
 
 # Running the sample

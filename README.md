@@ -61,8 +61,3 @@ The Vagrantfile binds the CrateDB on the edge device port 4200 to the port 4200 
 
 ## Connecting to Grafana
 The Vagrantfile binds the grafana on the edge device port 3000 to the port 3000 in your system. Browse to `http://localhost:3000` and you will find the login page. Use `admin` as username and password.
-
-
-# Running the sample
-
-Easiest way to run the sample is by using Visual Studio Code and Vagrant.

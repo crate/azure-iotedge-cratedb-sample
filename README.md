@@ -6,7 +6,7 @@ This is an [Azure IoT Edge](https://azure.microsoft.com/en-us/services/iot-edge/
 
 # Configuration
 
-To be able to run this sample on your edge device, you'll need to have [Azure IoT Edge](https://github.com/Azure/iotedgehubdev#installing) installed on the device, including a container runtime like Docker. The sample was developed on a Windows 10 IoT machine with Docker Desktop and Linux container and tested on macOS. 
+To be able to run this sample on your edge device, you'll need to have [Azure IoT Edge](https://github.com/Azure/iotedgehubdev#installing) installed on the device, including a container runtime like Docker. The sample was developed on a Windows 10 IoT machine with Docker Desktop and Linux container and tested on macOS.
 
 Since this sample was developed with Visual Studio Code, the easiest way to run the sample is by using Visual Studio Code with the according Azure IoT Edge Plugin, as used for [custom module development of Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module).
 
@@ -41,7 +41,7 @@ This approach makes the set-up experience more streamlined.
 
 ## Configuring the local database
 
-Before starting to deploy the sample to the edge device, the local CrateDB used in the sample has to be created first. An existing CrateDB in the local network could be used, too, but this sample uses CrateDB running in a container on the same device as the Azure IoT Edge runtime. 
+Before starting to deploy the sample to the edge device, the local CrateDB used in the sample has to be created first. An existing CrateDB in the local network could be used, too, but this sample uses CrateDB running in a container on the same device as the Azure IoT Edge runtime.
 This setup step should be done in your laptop, and will create the information in a data folder. This data folder is then shared with the Edge module, so the tables will be there. (that's why we start and stop the container after running the SQL)
 
 1. Create a folder on the disk for the CrateDB database files under the `crate` folder that you created above in step 7. For me, it is `/gn/git/azure-iotedge-cratedb-sample/crate/data`.

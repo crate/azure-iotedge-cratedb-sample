@@ -91,7 +91,7 @@
               "image": "mcr.microsoft.com/iotedge/opc-publisher:2.2.0",
               "createOptions": {
                 "Hostname" : "publisher",
-                "Cmd" : [ 
+                "Cmd" : [
                   "publisher",
                   "--at",
                   "directory",

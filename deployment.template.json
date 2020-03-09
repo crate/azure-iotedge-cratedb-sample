@@ -138,7 +138,7 @@
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "crate:3.3.5",
+              "image": "crate:4.1.2",
               "createOptions": {
                 "Hostname" : "cratedb",
                 "HostConfig": {

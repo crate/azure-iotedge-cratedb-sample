@@ -13,17 +13,17 @@ Since this sample was developed with Visual Studio Code, the easiest way to run 
 ## Requirements
 
 * Checkout this repo `git clone https://github.com/crate/azure-iotedge-cratedb-sample.git`
-* Install [Vagrant](https://www.vagrantup.com/downloads.html).
+* Install [Vagrant](https://www.vagrantup.com/downloads.html)
+* Install [VirtualBox](https://www.virtualbox.org)
 * Install [Visual Studio Code](https://code.visualstudio.com/download).
 * Install extensions for Visual Studio Code: (On the Visual Studio Code: Menu -> Preferences -> Extensions)
-    1. Azure IoT Hub Toolkit
-    2. Azure IoT Edge
-    3. Vagrant
+    1. Azure IoT Tools
+    2. Vagrant
 * Install [Docker](https://www.docker.com/get-started).
 
 ## Create the IoTHub and the IoT Edge device
 
-* Create an IoT Hub (S1) on Azure. You'll need to wait for it to be in an active state, it could take a while.
+* Create an IoT Hub (S1) on Azure. You'll need to wait for it to be in an active state, it could take a while. This [guide](https://devblogs.microsoft.com/visualstudio/azure-iot-tools-help-you-connect-to-azure-iot-hub-in-1-minute-in-visual-studio-code/) helps you with the necessary steps.
 * After your IoT Hub has started, you can use Visual Studio Code integration to connect to it.
 * In Visual Studio Code (or on the Azure Portal), you can create a new IoT Edge device.
 * Copy the contents of `.env.template` into a new file `.env`. The default settings work out of the box for the vagrant box. If you want to configure a different IoT Edge device please consult the 'Use a different device as IoT Edge Device' instructions.
@@ -32,13 +32,12 @@ Since this sample was developed with Visual Studio Code, the easiest way to run 
 
 ## Prefill CrateDB with required tables and users
 
-Before starting to deploy the sample to the edge device, the local CrateDB used in the sample has to be created first.
-This setup step should be done on your laptop, and will create the information in a data folder. This data folder is then shared with the Edge module, so the tables will be there. (that's why we start and stop the container after running the SQL)
+This setup step can be done on your laptop and will create the information in a data folder. This data folder is then shared with the IoT Edge device, so the tables will be there. (that's why we start and stop the container after running the SQL)
 
-* Create a folder on the disk for the CrateDB database files: e.g. ./crate/data
+* Create a sub-folder in the checked out repository for the CrateDB database files: `mkdir -p crate/data`
 * Run CrateDB locally from the command line by using `docker run -p "4200:4200" -d --rm --name cratedb -v /absolute/path/to/folder/crate/data:/data crate:4.1.2`. Use the absolute path to the folder you have created in the step above.
 * Open a web browser with `http://localhost:4200` and go to the CrateDB Admin UI console.
-* Create the tables and the user by executing all SQL Statements in the file `./scripts/database_setup/createTable.sql`.
+* Create the tables and the user by executing all SQL Statements in the file `./scripts/database_setup/createTable.sql`. Every SQL query must be executed on it's own.
 * Stop the container with `docker container stop cratedb`.
 
 
@@ -46,7 +45,7 @@ This setup step should be done on your laptop, and will create the information i
 
 * Right click on the device and select “Copy Device Connection String” from the Menu.
 * Modify the `vagrant/config.template.yaml` to use your Device Connection String and rename it to `config.yaml`.
-* In your terminal, start Vagrant by `vagrant up`.
+* In your terminal change directory `cd vagrant` and start the Vagrant box by `vagrant up`.
 * Open the shh by running `vagrant ssh`.
 * Restart the service inside the VM by `sudo systemctl restart iotedge`.
 
